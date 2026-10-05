@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto y recursos externos para aprender HTML semántico.">
+  <title>HTML Semántico - Contacto y recursos</title>
+</head>
+<body id="inicio">
+
+  <header>
+    <h1>Contacto y Recursos</h1>
+    <p>Sigue aprendiendo y escríbenos si tienes dudas.</p>
+
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="hipervinculos.html">Hipervínculos</a></li>
+        <li><a href="semanticos.html">Elementos semánticos</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto y recursos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="recursos">
+      <h2>Recursos recomendados</h2>
+      <p>Todos los enlaces se abren en una pestaña nueva.</p>
+      <ul>
+        <li>
+          <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/a" target="_blank" rel="noopener noreferrer">MDN: el elemento &lt;a&gt;</a>
+          &ndash; referencia completa de los hipervínculos.
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/es/docs/Glossary/Semantics" target="_blank" rel="noopener noreferrer">MDN: Semántica</a>
+          &ndash; qué significa la semántica en HTML.
+        </li>
+        <li>
+          <a href="https://html.spec.whatwg.org/multipage/" target="_blank" rel="noopener noreferrer" hreflang="en">Especificación HTML (WHATWG)</a>
+          &ndash; el estándar oficial (en inglés).
+        </li>
+        <li>
+          <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer" hreflang="en">Validador HTML del W3C</a>
+          &ndash; comprueba que tu código sea correcto.
+        </li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <address>
+        <p>Autor: <strong>Tu nombre</strong></p>
+        <p>Correo: <a href="mailto:contacto@ejemplo.com?subject=Consulta%20sobre%20HTML%20sem%C3%A1ntico">contacto@ejemplo.com</a></p>
+        <p>Teléfono: <a href="tel:+51987654321">+51 987 654 321</a></p>
+      </address>
+    </section>
+
+    <section id="preguntas">
+      <h2>Preguntas frecuentes</h2>
+
+      <details>
+        <summary>¿Es obligatorio usar elementos semánticos?</summary>
+        <p>No; el navegador mostrará la página igual. Pero mejoran la accesibilidad, el SEO y la legibilidad del código.</p>
+      </details>
+
+      <details>
+        <summary>¿Cuántos &lt;header&gt; puede tener una página?</summary>
+        <p>Varios: uno para la página y uno dentro de cada <code>&lt;article&gt;</code> o <code>&lt;section&gt;</code> si lo necesitan. En cambio, solo debe haber un <code>&lt;main&gt;</code>.</p>
+      </details>
+
+      <details>
+        <summary>¿Por qué este sitio no tiene colores?</summary>
+        <p>Porque está hecho solo con HTML nativo. El diseño visual se agrega después con CSS.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+    <p>Anterior: <a href="semanticos.html">Elementos semánticos</a></p>
+    <p>&copy; <time datetime="2026">2026</time> &middot; Proyecto de HTML nativo</p>
+    <p><a href="#inicio">&uarr; Volver arriba</a></p>
+  </footer>
+
+</body>
+</html>

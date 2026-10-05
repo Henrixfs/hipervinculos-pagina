@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tipos de hipervínculos en HTML y atributos del elemento a.">
+  <title>HTML Semántico - Hipervínculos</title>
+</head>
+<body id="inicio">
+
+  <header>
+    <h1>Hipervínculos</h1>
+    <p>El elemento <code>&lt;a&gt;</code> y todas sus posibilidades.</p>
+
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="hipervinculos.html" aria-current="page">Hipervínculos</a></li>
+        <li><a href="semanticos.html">Elementos semánticos</a></li>
+        <li><a href="contacto.html">Contacto y recursos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <nav aria-label="En esta página">
+      <h2>En esta página</h2>
+      <ul>
+        <li><a href="#que-es">¿Qué es un hipervínculo?</a></li>
+        <li><a href="#tipos">Tipos de enlaces</a></li>
+        <li><a href="#atributos">Atributos del elemento &lt;a&gt;</a></li>
+        <li><a href="#buenas-practicas">Buenas prácticas</a></li>
+      </ul>
+    </nav>
+
+    <section id="que-es">
+      <h2>¿Qué es un hipervínculo?</h2>
+      <p>
+        Un <dfn>hipervínculo</dfn> (o enlace) es una referencia que permite saltar de un documento
+        a otro, o a otra parte del mismo documento. En HTML se crea con el elemento
+        <code>&lt;a&gt;</code> (de <em>anchor</em>, ancla) y su atributo <code>href</code>.
+      </p>
+      <pre><code>&lt;a href="destino.html"&gt;Texto del enlace&lt;/a&gt;</code></pre>
+    </section>
+
+    <section id="tipos">
+      <h2>Tipos de enlaces</h2>
+
+      <article id="absoluto">
+        <h3>1. Enlace absoluto (externo)</h3>
+        <p>Usa la URL completa, incluyendo el protocolo. Sirve para ir a otros sitios web.</p>
+        <pre><code>&lt;a href="https://developer.mozilla.org/es/"&gt;MDN Web Docs&lt;/a&gt;</code></pre>
+        <p>Resultado: <a href="https://developer.mozilla.org/es/">MDN Web Docs</a></p>
+      </article>
+
+      <article id="relativo">
+        <h3>2. Enlace relativo (interno)</h3>
+        <p>Apunta a un archivo del mismo sitio, tomando como referencia la ubicación actual.</p>
+        <pre><code>&lt;a href="semanticos.html"&gt;Elementos semánticos&lt;/a&gt;</code></pre>
+        <p>Resultado: <a href="semanticos.html">Elementos semánticos</a></p>
+      </article>
+
+      <article id="ancla">
+        <h3>3. Enlace a una sección (ancla)</h3>
+        <p>
+          Usa <code>#</code> seguido del <code>id</code> de un elemento. Puede apuntar a la misma
+          página o a una sección de otra página.
+        </p>
+        <pre><code>&lt;a href="#atributos"&gt;Ir a atributos&lt;/a&gt;
+&lt;a href="semanticos.html#estructura"&gt;Ir a estructura&lt;/a&gt;</code></pre>
+        <p>
+          Resultado: <a href="#atributos">Ir a atributos</a> &middot;
+          <a href="semanticos.html#estructura">Ir a estructura</a>
+        </p>
+      </article>
+
+      <article id="nueva-pestana">
+        <h3>4. Abrir en una nueva pestaña</h3>
+        <p>
+          El atributo <code>target="_blank"</code> abre el enlace en otra pestaña. Se recomienda
+          acompañarlo de <code>rel="noopener noreferrer"</code> por seguridad.
+        </p>
+        <pre><code>&lt;a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"&gt;W3C&lt;/a&gt;</code></pre>
+        <p>Resultado: <a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer">W3C (se abre en una pestaña nueva)</a></p>
+      </article>
+
+      <article id="correo">
+        <h3>5. Enlace de correo electrónico</h3>
+        <p>Con <code>mailto:</code> se abre el programa de correo del usuario. Se pueden añadir asunto y cuerpo.</p>
+        <pre><code>&lt;a href="mailto:contacto@ejemplo.com?subject=Consulta%20HTML"&gt;Escríbenos&lt;/a&gt;</code></pre>
+        <p>Resultado: <a href="mailto:contacto@ejemplo.com?subject=Consulta%20HTML">Escríbenos</a></p>
+      </article>
+
+      <article id="telefono">
+        <h3>6. Enlace telefónico</h3>
+        <p>Con <code>tel:</code> los teléfonos móviles inician una llamada al tocar el enlace.</p>
+        <pre><code>&lt;a href="tel:+51987654321"&gt;+51 987 654 321&lt;/a&gt;</code></pre>
+        <p>Resultado: <a href="tel:+51987654321">+51 987 654 321</a></p>
+      </article>
+
+      <article id="descarga">
+        <h3>7. Enlace de descarga</h3>
+        <p>El atributo <code>download</code> indica al navegador que descargue el archivo en lugar de abrirlo.</p>
+        <pre><code>&lt;a href="index.html" download="pagina-inicio.html"&gt;Descargar la página de inicio&lt;/a&gt;</code></pre>
+        <p>Resultado: <a href="index.html" download="pagina-inicio.html">Descargar la página de inicio</a></p>
+      </article>
+
+      <article id="imagen-enlace">
+        <h3>8. Una imagen u otro bloque como enlace</h3>
+        <p>Dentro de <code>&lt;a&gt;</code> se puede colocar una imagen o incluso varios elementos.</p>
+        <pre><code>&lt;a href="index.html"&gt;
+  &lt;img src="logo.png" alt="Ir al inicio"&gt;
+&lt;/a&gt;</code></pre>
+        <p>
+          Importante: el <code>alt</code> de la imagen pasa a ser el texto del enlace, así que debe
+          describir el destino.
+        </p>
+      </article>
+    </section>
+
+    <section id="atributos">
+      <h2>Atributos del elemento &lt;a&gt;</h2>
+      <table border="1">
+        <caption>Atributos más usados</caption>
+        <thead>
+          <tr>
+            <th scope="col">Atributo</th>
+            <th scope="col">Función</th>
+            <th scope="col">Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>href</code></td>
+            <td>Dirección (URL) del destino.</td>
+            <td><code>href="pagina.html"</code></td>
+          </tr>
+          <tr>
+            <td><code>target</code></td>
+            <td>Dónde se abre el enlace (<code>_self</code>, <code>_blank</code>, <code>_parent</code>, <code>_top</code>).</td>
+            <td><code>target="_blank"</code></td>
+          </tr>
+          <tr>
+            <td><code>rel</code></td>
+            <td>Relación entre la página actual y el destino.</td>
+            <td><code>rel="noopener noreferrer"</code></td>
+          </tr>
+          <tr>
+            <td><code>title</code></td>
+            <td>Información extra que aparece al pasar el cursor.</td>
+            <td><code>title="Ver más"</code></td>
+          </tr>
+          <tr>
+            <td><code>download</code></td>
+            <td>Descarga el recurso en vez de abrirlo.</td>
+            <td><code>download="archivo.pdf"</code></td>
+          </tr>
+          <tr>
+            <td><code>hreflang</code></td>
+            <td>Idioma del documento de destino.</td>
+            <td><code>hreflang="en"</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="buenas-practicas">
+      <h2>Buenas prácticas</h2>
+      <ul>
+        <li>Usa textos descriptivos: <q>Ver guía de formularios</q> es mejor que <q>clic aquí</q>.</li>
+        <li>Avisa cuando un enlace abre una pestaña nueva o descarga un archivo.</li>
+        <li>Agrega <code>rel="noopener noreferrer"</code> a los enlaces con <code>target="_blank"</code>.</li>
+        <li>Usa <code>id</code> únicos y descriptivos para las anclas.</li>
+        <li>No uses enlaces para acciones (para eso existe <code>&lt;button&gt;</code>).</li>
+      </ul>
+
+      <details>
+        <summary>Ejercicio: ¿qué está mal en este enlace?</summary>
+        <pre><code>&lt;a href="https://ejemplo.com" target="_blank"&gt;clic aquí&lt;/a&gt;</code></pre>
+        <p>
+          <strong>Respuesta:</strong> el texto no es descriptivo y falta
+          <code>rel="noopener noreferrer"</code>.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+    <p>
+      Anterior: <a href="index.html">Inicio</a> &middot;
+      Siguiente: <a href="semanticos.html">Elementos semánticos</a>
+    </p>
+    <p>&copy; <time datetime="2026">2026</time> &middot; Proyecto de HTML nativo</p>
+    <p><a href="#inicio">&uarr; Volver arriba</a></p>
+  </footer>
+
+</body>
+</html>

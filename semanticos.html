@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elementos semánticos de HTML5: header, nav, main, section, article, aside, footer y más.">
+  <title>HTML Semántico - Elementos semánticos</title>
+</head>
+<body id="inicio">
+
+  <header>
+    <h1>Elementos Semánticos</h1>
+    <p>Etiquetas que describen el <em>significado</em> del contenido, no solo su apariencia.</p>
+
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="hipervinculos.html">Hipervínculos</a></li>
+        <li><a href="semanticos.html" aria-current="page">Elementos semánticos</a></li>
+        <li><a href="contacto.html">Contacto y recursos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <nav aria-label="En esta página">
+      <h2>En esta página</h2>
+      <ul>
+        <li><a href="#que-son">¿Qué son?</a></li>
+        <li><a href="#estructura">Elementos de estructura</a></li>
+        <li><a href="#texto">Elementos semánticos de texto</a></li>
+        <li><a href="#comparacion">div vs. semántica</a></li>
+      </ul>
+    </nav>
+
+    <section id="que-son">
+      <h2>¿Qué son los elementos semánticos?</h2>
+      <p>
+        Un <dfn>elemento semántico</dfn> es una etiqueta cuyo nombre indica claramente qué tipo
+        de contenido contiene. Por ejemplo, <code>&lt;footer&gt;</code> dice <q>esto es un pie de
+        página</q>, mientras que <code>&lt;div&gt;</code> no dice nada.
+      </p>
+      <p>
+        Fueron introducidos con <strong>HTML5</strong> para reemplazar el uso excesivo de
+        <code>&lt;div id="header"&gt;</code>, <code>&lt;div class="menu"&gt;</code>, etc.
+      </p>
+    </section>
+
+    <section id="estructura">
+      <h2>Elementos de estructura</h2>
+
+      <figure>
+        <pre>
++------------------------------------------+
+|                 &lt;header&gt;                 |
+|   +----------------------------------+   |
+|   |               &lt;nav&gt;              |   |
+|   +----------------------------------+   |
++------------------------------------------+
+|                  &lt;main&gt;                  |
+|  +-------------------------+ +---------+ |
+|  |        &lt;section&gt;        | |         | |
+|  |  +-------------------+  | | &lt;aside&gt; | |
+|  |  |     &lt;article&gt;     |  | |         | |
+|  |  +-------------------+  | |         | |
+|  +-------------------------+ +---------+ |
++------------------------------------------+
+|                 &lt;footer&gt;                 |
++------------------------------------------+
+        </pre>
+        <figcaption>Figura 1. Estructura típica de una página con HTML5 semántico.</figcaption>
+      </figure>
+
+      <dl>
+        <dt><code>&lt;header&gt;</code></dt>
+        <dd>Encabezado de la página o de una sección. Suele contener el título, logo y navegación.</dd>
+
+        <dt><code>&lt;nav&gt;</code></dt>
+        <dd>Bloque de enlaces de navegación principal (menús, índices).</dd>
+
+        <dt><code>&lt;main&gt;</code></dt>
+        <dd>Contenido principal y único del documento. Solo debe haber uno visible por página.</dd>
+
+        <dt><code>&lt;section&gt;</code></dt>
+        <dd>Agrupa contenido relacionado por tema. Normalmente lleva un encabezado (<code>h2</code>, <code>h3</code>…).</dd>
+
+        <dt><code>&lt;article&gt;</code></dt>
+        <dd>Contenido independiente que tiene sentido por sí solo: una noticia, un post, un comentario.</dd>
+
+        <dt><code>&lt;aside&gt;</code></dt>
+        <dd>Contenido complementario o tangencial: barras laterales, notas, publicidad.</dd>
+
+        <dt><code>&lt;footer&gt;</code></dt>
+        <dd>Pie de la página o de una sección: autoría, derechos, enlaces relacionados.</dd>
+
+        <dt><code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code></dt>
+        <dd>Contenido ilustrativo (imagen, diagrama, código) con su leyenda.</dd>
+
+        <dt><code>&lt;address&gt;</code></dt>
+        <dd>Datos de contacto del autor o propietario del documento.</dd>
+
+        <dt><code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code></dt>
+        <dd>Bloque desplegable que el usuario puede abrir y cerrar sin JavaScript.</dd>
+      </dl>
+
+      <h3>Ejemplo de código</h3>
+      <pre><code>&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Mi blog&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="index.html"&gt;Inicio&lt;/a&gt;
+      &lt;a href="blog.html"&gt;Blog&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;h2&gt;Mi primer post&lt;/h2&gt;
+      &lt;p&gt;Publicado el &lt;time datetime="2026-10-05"&gt;5 de octubre&lt;/time&gt;&lt;/p&gt;
+      &lt;p&gt;Contenido del artículo...&lt;/p&gt;
+    &lt;/article&gt;
+
+    &lt;aside&gt;
+      &lt;h2&gt;Sobre mí&lt;/h2&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2026 Mi blog&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+    </section>
+
+    <section id="texto">
+      <h2>Elementos semánticos de texto</h2>
+      <p>La semántica también existe a nivel de palabras y frases:</p>
+      <table border="1">
+        <caption>Elementos semánticos en línea</caption>
+        <thead>
+          <tr>
+            <th scope="col">Elemento</th>
+            <th scope="col">Significado</th>
+            <th scope="col">Ejemplo en vivo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;strong&gt;</code></td>
+            <td>Importancia fuerte.</td>
+            <td><strong>¡No olvides cerrar las etiquetas!</strong></td>
+          </tr>
+          <tr>
+            <td><code>&lt;em&gt;</code></td>
+            <td>Énfasis en la pronunciación.</td>
+            <td>Esto es <em>muy</em> útil.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;mark&gt;</code></td>
+            <td>Texto resaltado o relevante.</td>
+            <td>Palabra <mark>clave</mark>.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;time&gt;</code></td>
+            <td>Fecha u hora legible por máquinas.</td>
+            <td><time datetime="2026-10-05">5 de octubre de 2026</time></td>
+          </tr>
+          <tr>
+            <td><code>&lt;abbr&gt;</code></td>
+            <td>Abreviatura con su significado.</td>
+            <td><abbr title="Cascading Style Sheets">CSS</abbr></td>
+          </tr>
+          <tr>
+            <td><code>&lt;cite&gt;</code></td>
+            <td>Título de una obra.</td>
+            <td><cite>Don Quijote de la Mancha</cite></td>
+          </tr>
+          <tr>
+            <td><code>&lt;q&gt;</code></td>
+            <td>Cita corta en línea.</td>
+            <td><q>Menos es más</q></td>
+          </tr>
+          <tr>
+            <td><code>&lt;code&gt;</code></td>
+            <td>Fragmento de código.</td>
+            <td><code>let x = 5;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;kbd&gt;</code></td>
+            <td>Entrada de teclado.</td>
+            <td><kbd>Ctrl</kbd> + <kbd>U</kbd></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Cita en bloque</h3>
+      <blockquote cite="https://www.w3.org/standards/webdesign/accessibility">
+        <p>El poder de la Web está en su universalidad. El acceso para todas las personas, independientemente de su discapacidad, es un aspecto esencial.</p>
+        <footer>&mdash; <cite>Tim Berners-Lee</cite></footer>
+      </blockquote>
+    </section>
+
+    <section id="comparacion">
+      <h2>div vs. semántica</h2>
+      <table border="1">
+        <caption>La misma estructura escrita de dos formas</caption>
+        <thead>
+          <tr>
+            <th scope="col">Sin semántica</th>
+            <th scope="col">Con semántica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;div id="header"&gt;</code></td>
+            <td><code>&lt;header&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;div class="menu"&gt;</code></td>
+            <td><code>&lt;nav&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;div id="contenido"&gt;</code></td>
+            <td><code>&lt;main&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;div class="post"&gt;</code></td>
+            <td><code>&lt;article&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;div class="sidebar"&gt;</code></td>
+            <td><code>&lt;aside&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;div id="footer"&gt;</code></td>
+            <td><code>&lt;footer&gt;</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <code>&lt;div&gt;</code> y <code>&lt;span&gt;</code> siguen siendo válidos, pero solo deben
+        usarse cuando <strong>ningún</strong> elemento semántico describe el contenido.
+      </p>
+
+      <details>
+        <summary>Ejercicio: ¿qué elemento usarías para un comentario de un lector?</summary>
+        <p>
+          <strong>Respuesta:</strong> <code>&lt;article&gt;</code>, porque un comentario es contenido
+          independiente que tiene sentido por sí solo.
+        </p>
+      </details>
+    </section>
+
+    <aside>
+      <h2>Consejo</h2>
+      <p>
+        Esta misma página usa <code>header</code>, <code>nav</code>, <code>main</code>,
+        <code>section</code>, <code>figure</code>, <code>aside</code> y <code>footer</code>.
+        ¡Revisa su código fuente con <kbd>Ctrl</kbd> + <kbd>U</kbd>!
+      </p>
+    </aside>
+  </main>
+
+  <footer>
+    <hr>
+    <p>
+      Anterior: <a href="hipervinculos.html">Hipervínculos</a> &middot;
+      Siguiente: <a href="contacto.html">Contacto y recursos</a>
+    </p>
+    <p>&copy; <time datetime="2026">2026</time> &middot; Proyecto de HTML nativo</p>
+    <p><a href="#inicio">&uarr; Volver arriba</a></p>
+  </footer>
+
+</body>
+</html>

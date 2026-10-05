@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guía básica sobre hipervínculos y elementos semánticos en HTML5.">
+  <title>HTML Semántico - Inicio</title>
+</head>
+<body id="inicio">
+
+  <header>
+    <h1>Hipervínculos y Elementos Semánticos</h1>
+    <p>Una guía práctica de HTML5 escrita con HTML puro.</p>
+
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="hipervinculos.html">Hipervínculos</a></li>
+        <li><a href="semanticos.html">Elementos semánticos</a></li>
+        <li><a href="contacto.html">Contacto y recursos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="bienvenida">
+      <h2>Bienvenida</h2>
+      <p>
+        Este sitio explica dos pilares del lenguaje <abbr title="HyperText Markup Language">HTML</abbr>:
+        los <strong>hipervínculos</strong>, que conectan documentos entre sí, y los
+        <strong>elementos semánticos</strong>, que describen el significado de cada parte de una página.
+      </p>
+      <p>
+        Todo el sitio está construido <em>sin CSS ni JavaScript</em>, para que puedas ver cómo luce
+        HTML nativo y estudiar su código fuente (clic derecho &rarr; <kbd>Ver código fuente</kbd>).
+      </p>
+    </section>
+
+    <section id="contenido">
+      <h2>Tabla de contenido</h2>
+      <ol>
+        <li>
+          <a href="hipervinculos.html">Hipervínculos</a>
+          <ol>
+            <li><a href="hipervinculos.html#que-es">¿Qué es un hipervínculo?</a></li>
+            <li><a href="hipervinculos.html#tipos">Tipos de enlaces</a></li>
+            <li><a href="hipervinculos.html#atributos">Atributos del elemento &lt;a&gt;</a></li>
+            <li><a href="hipervinculos.html#buenas-practicas">Buenas prácticas</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="semanticos.html">Elementos semánticos</a>
+          <ol>
+            <li><a href="semanticos.html#que-son">¿Qué son?</a></li>
+            <li><a href="semanticos.html#estructura">Elementos de estructura</a></li>
+            <li><a href="semanticos.html#texto">Elementos semánticos de texto</a></li>
+            <li><a href="semanticos.html#comparacion">div vs. semántica</a></li>
+          </ol>
+        </li>
+        <li><a href="contacto.html">Contacto y recursos</a></li>
+      </ol>
+    </section>
+
+    <section id="por-que">
+      <h2>¿Por qué es importante?</h2>
+      <ul>
+        <li><strong>Accesibilidad:</strong> los lectores de pantalla entienden mejor la página.</li>
+        <li><strong>SEO:</strong> los buscadores identifican el contenido principal.</li>
+        <li><strong>Mantenimiento:</strong> el código es más fácil de leer para otros desarrolladores.</li>
+        <li><strong>Navegación:</strong> los enlaces unen páginas y secciones en una red de información.</li>
+      </ul>
+    </section>
+
+    <aside>
+      <h2>Dato curioso</h2>
+      <p>
+        Tim Berners-Lee creó la World Wide Web en <time datetime="1989">1989</time>.
+        La idea central era justamente el <mark>hipertexto</mark>: documentos unidos por enlaces.
+      </p>
+    </aside>
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; <time datetime="2026">2026</time> &middot; Proyecto de HTML nativo</p>
+    <p><a href="#inicio">&uarr; Volver arriba</a></p>
+  </footer>
+
+</body>
+</html>
